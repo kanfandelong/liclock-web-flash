@@ -1,0 +1,15 @@
+{
+  "name": "LiClock 8MByte Flash",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "improv": false,
+      "parts": [
+          { "path": "bin/8MB/bootloader.bin", "offset": 4096 }
+          { "path": "bin/8MB/partitions.bin", "offset": 32768 ｝
+          { "path": "bin/8MB/firmware.bin", "offset": 65536 },
+      ]
+    }
+  ]
+}

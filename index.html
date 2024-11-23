@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>LiClock 固件烧录工具</h1>
+    <h1>警告：不支持ESP32-SOLO-1芯片</h1>
+    <p>基于小李电子实验室源码修改</p>
+	<p>本固件作者:看番の龙</p>
+    <a href="https://space.bilibili.com/213123506">小李电子实验室B站主页</a>
+	<a href="https://gitee.com/jiangzihan182959/liclock-1.0.6">本固件开源代码</a>
+    <div id="main" style="display: none;">
+        <br>
+        <script
+            type="module"
+            src="js/install-button.js">
+        </script>
+        <h3>v1.0.2</h3>
+		<p>群主旧版固件</p>
+        <esp-web-install-button id="installButton" manifest="webflash/manifest.json"></esp-web-install-button>
+        <h3>v2.0.10.8</h3>
+        <table>
+            <tr>
+                <td>4MB Flash</td>
+                <td><esp-web-install-button id="betaInstallButton1" manifest="webflash/manifest4M.json"></esp-web-install-button></td>
+            </tr>
+            <tr>
+                <td>8MB Flash</td>
+                <td><esp-web-install-button id="betaInstallButton2" manifest="webflash/manifest8M.json"></esp-web-install-button></td>
+            </tr>
+            <tr>
+                <td>16MB Flash</td>
+                <td><esp-web-install-button id="betaInstallButton3" manifest="webflash/manifest16M.json"></esp-web-install-button></td>
+            </tr>
+        </table>
+        <br>
+        <span>NOTE: 确保你已将其它软件从此串口断开连接 (e.g. 各种串口监视器、Cura)</span>
+    </div>
+    <div id="notSupported" style="display: none;">
+        你的浏览器不支持网页端串口，建议使用Chrome或者Edge
+    </div>
+    <p>网页烧录工具原作者：https://github.com/esphome/esp-web-tools</p>
+    <p>如果烧不进去，提示wait packet header、sync 2nd等信息，请先检查串口烧录芯片的焊接，必须用烙铁加焊，要求每个焊点都圆润并突起。</p>
+    <p>同时，烧录过程中不要打开任何串口监视器（包括3D打印机切片软件）</p>
+    <p>背面的按钮是复位用的，不是BOOT或GPIO0，烧录过程中不要按它。</p>
+    <p>如果屏幕无显示，请先确认右下方三个二极管方向是否正确，之后加焊或重新焊接FPC/FFC连接器。</p>
+    
+
+    <script>
+        if(navigator.serial){
+            document.getElementById("notSupported").style.display = 'none';
+            document.getElementById("main").style.display = 'block';
+        } else {
+            document.getElementById("notSupported").style.display = 'block';
+            document.getElementById("main").style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
