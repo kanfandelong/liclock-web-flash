@@ -1,5 +1,5 @@
 {
-  "name": "LiClock 16MByte Flash Log",
+  "name": "LiClock 16MByte Flash have Esp Log",
   "new_install_prompt_erase": true,
   "builds": [
     {
