@@ -1,0 +1,15 @@
+{
+  "name": "LiClock 16MByte Flash Log",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "improv": false,
+      "parts": [
+          { "path": "bin/16MBlog/bootloader.bin", "offset": 4096 },
+          { "path": "bin/16MBlog/partitions.bin", "offset": 32768 },
+          { "path": "bin/16MBlog/firmware.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
