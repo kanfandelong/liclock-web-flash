@@ -1,0 +1,15 @@
+{
+    "name": "LiClock 16MByte Flash",
+    "new_install_prompt_erase": true,
+    "builds": [
+      {
+        "chipFamily": "ESP32",
+        "improv": false,
+        "parts": [
+            { "path": "bin/2.0.a.c/bootloader.bin", "offset": 4096 },
+            { "path": "bin/2.0.a.c/partitions.bin", "offset": 32768 },
+            { "path": "bin/2.0.a.c/firmware.bin", "offset": 65536 }
+        ]
+      }
+    ]
+}
